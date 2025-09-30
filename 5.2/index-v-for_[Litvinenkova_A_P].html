@@ -1,0 +1,83 @@
+<head>
+    <title>Лаба05.3</title>
+    <script SRC="Vue.js"></script>
+</head>
+<body>
+    <div id="appVue">
+        <div>
+            <ul id="transportList">
+                <li v-for="(type, index) in categ" :key="index">
+                    Вид транспорта: {{ type.transport }}<br>
+                    <button @click="addTransport(index)">Добавить транспорт</button>
+                    <ul>
+                        <li v-for="(x, categoryIndex) in type.category" :key="categoryIndex">
+                            {{ x }}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <p>Литвиненкова ТУУ-171 ©2025</p>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#appVue',
+            data: {
+                categ: [
+                    {
+                        "transport": "Водный",
+                        "category": [
+                            "Катер",
+                            "Яхта",
+                            "Лайнер",
+                            "Каноэ",
+                            "Теплоход"
+                        ]
+                    },
+                    {
+                        "transport": "Рельсовый",
+                        "category": [
+                            "Дрезина",
+                            "Электровоз",
+                            "Телега",
+                            "Трамвай",
+                            "Монорельс"
+                        ]
+                    },
+                    {
+                        "transport": "Воздушный",
+                        "category": [
+                            "Самолет",
+                            "Вертолет",
+                            "Истребитель",
+                            "Воздушный шар",
+                            "Параплан"
+                        ]
+                    },
+                    {
+                        "transport": "Наземный",
+                        "category": [
+                            "Автомобиль",
+                            "Самокат",
+                            "Велосипед",
+                            "Автобус",
+                            "Скуттер"
+                        ]
+                    }
+                ]
+            },
+            methods: {
+                addTransport(index) {
+                    const newTransport = prompt('Введите название нового транспорта:');
+                    if (newTransport) {
+                        this.categ[index].category.push(newTransport);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

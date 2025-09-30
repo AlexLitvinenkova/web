@@ -1,0 +1,52 @@
+<HTML>
+	<!-- Заголовок страницы в браузере -->
+	<TITLE>Лаба05.3</TITLE>
+	<BODY>
+	<!-- Подключение ядра к проекту -->
+		<SCRIPT SRC="Vue.js"></SCRIPT>
+		<!-- Элементы гипертекстовой разметки -->
+		<DIV ID=appVue>
+		<div >
+			<ol>
+				<li v-for="(item, index) in items" :key="index">
+					{{ item }}
+				</li>
+			</ol>
+			<input type="text" v-model="message" @keydown="addPoint"/>
+		</div>
+			
+			<DIV><p>Литвиненкова ТУУ-171 ©2025</p></DIV>		
+			
+		</DIV>
+		
+		<SCRIPT>
+        new Vue({
+            el: '#appVue',
+            data: {
+                message: '',
+                items: []
+            },
+            methods: {
+                addPoint(event) {
+                    // Проверяем, нажата ли клавиша пробела
+                    if (event.key === ' ') {
+                        event.preventDefault(); // Предотвращаем добавление пробела в input
+                        if (this.message.length > 0 && this.message.length <= 5) {
+                            this.items.push(this.message); // Добавляем значение в список
+                            this.message = ''; // Очищаем input
+                        }
+                    }
+                }
+            },
+            watch: {
+                message(newValue) {
+                    // Если длина message больше 5, очищаем список
+                    if (newValue.length > 5) {
+                        this.items = [];
+                    }
+                }
+            }
+        });
+		</SCRIPT>
+	</BODY>
+</HTML>
