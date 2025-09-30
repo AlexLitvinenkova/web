@@ -1,0 +1,78 @@
+<HTML>
+	<!-- Заголовок страницы в браузере -->
+	<TITLE>Лаба01</TITLE>
+	<BODY>
+	<!-- Подключение ядра к проекту -->
+		<SCRIPT SRC="Vue.js"></SCRIPT>
+		<!-- Элементы гипертекстовой разметки -->
+		<DIV ID=app>
+			<!--Блок заголовка-->
+				<DIV>
+					<h1>Лабараторная работа №1</h1>
+				</DIV>
+				<!--Блок фотографии и личной информации-->
+				<DIV>
+					<table> 
+						<tr>
+							<td> <img src="Фото.jpg" height=”300px”, width="300px"> </td>
+							<td> 
+								<h4>Личная информация</h4>
+								<UL style="list-style-type:square">
+									<LI>Литвиненкова Александра Петровна</LI>
+									<LI>г. Астрахань, д.321</LI>
+								</UL> 
+							</td>
+						</tr>
+					</table>
+				</DIV>
+				<!--Блок контактной информации-->
+				<DIV>
+				<!--Нумерованный список-->
+					<h4>Контактная информация</h4>
+					<OL type="a">
+						<LI>Моб. телефон: +7 966-000-00-00</LI>
+						<LI>Telegram:<a href="https://t.me/litvinenkovaap">litvinenkovaap</a></LI>
+						<LI>Вконтакте: <a href="https://vk.com/anksunamun_lucie">https://vk.com/litvinenkovaap</a></LI>
+						<LI>mail: <a href="mailto:litvinenkovaap@mail.ru">litvinenkovaap@mail.ru</a></LI>
+						<LI>WhatsApp: +7 966-000-00-00</LI>
+					</OL>
+				</DIV>
+			
+				<DIV>
+					<h4>Гибкие навыки</h4>
+					<OL type="i">
+						<LI>Владение Xmind</LI>
+						<LI>Владение HTML</LI>
+						<LI>Владение JS</LI>
+					</OL>
+				</DIV>
+			
+				<DIV>
+					<h4>Жесткие навыки</h4>
+					<OL type="I">
+						<LI>Владение RPA Robin</LI>
+						<LI>Владение ChatNavigator</LI>
+						<LI>Владение Skyrim</LI>
+					</OL>
+				</DIV>
+				<DIV>
+					<h4>Дополнительное описание</h4>
+					<p>Краткое описание сайта</p>
+				</DIV>
+			
+				<DIV> ©2025 </DIV>		
+		</DIV>
+
+		<button ID = myButton onclick = "myFunc()">Клонировать сайт</button> <!-- добавляем атрибут событий onclick -->		
+
+		<SCRIPT>
+			const firstDiv = document.querySelector( "div" ); // выбираем первый элемент <div> в документе 
+			function myFunc() {
+				const newDiv = firstDiv.cloneNode( true ); // клонируем элемент с его потомками
+				document.body.appendChild( newDiv ); // добавляем клонированный элемент элементу <body>
+				var button = document.getElementById('myButton');
+				button.disabled = true;
+			}
+		</SCRIPT>
+	</BODY>
+</HTML>
