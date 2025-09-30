@@ -1,0 +1,96 @@
+<HTML>
+	<!-- Заголовок страницы в браузере -->
+	<TITLE>Лаба04.7</TITLE>
+	<BODY>
+	<!-- Подключение ядра к проекту -->
+		<SCRIPT SRC="Vue.js"></SCRIPT>
+		<!-- Элементы гипертекстовой разметки -->
+		<DIV ID=appVue>
+		<div >
+			<ul ID=transportList>
+				<li v-for="type in categ">Вид транспорта: {{type.transport}}<br>
+					<ul>
+						<li v-for="x in categ">{{x.category}}</li>
+					</ul>
+					<button id=myButton onclick="addAnother()">Добавить транспорт</button>
+				</li>
+			</ul>
+		</div>
+			
+			<DIV><p>Литвиненкова ТУУ-171 ©2025</p></DIV>		
+			
+		</DIV>
+		
+		<SCRIPT>
+			var app = new Vue({
+				el: '#appVue',
+				data:
+				{
+					categ:
+					[
+						{
+							"transport": "Водный",
+							"category":
+							[
+								"Катер",
+								"Яхта",
+								"Лайнер",
+								"Каноэ",
+								"Теплоход"
+							]
+						},
+						{
+							"transport": "Рельсовый",
+							"category":
+							[
+								"Дрезина",
+								"Электровоз",
+								"Телега",
+								"Трамвай",
+								"Монорельс"
+							]
+						},
+						{
+							"transport": "Воздушный",
+							"category":
+							[
+								"Самолет",
+								"Вертолет",
+								"Истребитель",
+								"Воздушный шар",
+								"Параплан"
+							]
+						},
+						{
+							"transport": "Наземный",
+							"category":
+							[
+								"Автомобиль",
+								"Самокат",
+								"Велосипед",
+								"Автобус",
+								"Скуттер"
+							]
+						},
+
+
+
+						
+					]
+				},	
+			})
+			
+			addAnother = function() {
+  var ul = document.getElementById("list");
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode("Four"));
+  li.setAttribute("id", "element4"); // added line
+  ul.appendChild(li);
+  alert(li.id);
+}
+			
+			
+
+		</SCRIPT>
+	</BODY>
+</HTML>

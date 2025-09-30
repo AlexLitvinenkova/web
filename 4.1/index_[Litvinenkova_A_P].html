@@ -1,0 +1,32 @@
+<HTML>
+	<!-- Заголовок страницы в браузере -->
+	<TITLE>Лаба04.1</TITLE>
+	<BODY>
+	<!-- Подключение ядра к проекту -->
+		<SCRIPT SRC="Vue.js"></SCRIPT>
+		<!-- Элементы гипертекстовой разметки -->
+		<DIV ID=appVue>
+			
+			<div> <table :border="brd"> 
+				<tr><td><img :src="logo"  :height=hgt :TITLE="logo"></img></td></tr>
+			</table> </div>
+			
+			<DIV> Литвиненкова ТУУ-171 ©2025 </DIV>		
+			
+		</DIV>
+		
+		<SCRIPT>
+			var app = new Vue({
+				el: '#appVue',
+				data:
+				{
+					logo: 'javascriptlogo.png',
+					hgt: '200',
+					brd: '5'
+				}
+				
+			})
+		</SCRIPT>
+		
+	</BODY>
+</HTML>

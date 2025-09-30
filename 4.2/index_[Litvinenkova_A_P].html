@@ -1,0 +1,71 @@
+<HTML>
+	<!-- Заголовок страницы в браузере -->
+	<TITLE>Лаба04.2</TITLE>
+	<BODY>
+	<!-- Подключение ядра к проекту -->
+		<SCRIPT SRC="Vue.js"></SCRIPT>
+		<!-- Элементы гипертекстовой разметки -->
+		<DIV ID=appVue>
+			
+			<div><input v-on:click="inFocus"
+						v-on:blur="toWrite"
+						v-bind:value="message"
+						v-on:click.left.ctrl="savePage"
+						v-on:keydown.prevent.ctrl.ы="cancelSave($event)"
+						v-on:keydown.prevent.ctrl.s="cancelSave($event)" /></div>
+			
+			<DIV> Литвиненкова ТУУ-171 ©2025 </DIV>		
+			
+		</DIV>
+		
+		<SCRIPT>
+			var app = new Vue({
+				el: '#appVue',
+				data:
+				{
+					message: "Элемент не в фокусе",
+					
+				},
+				
+				methods: {
+					inFocus: function() {
+						this.message="";
+					},
+					toWrite: function() {
+						this.message="Элемент не в фокусе";
+					},
+					
+					savePage: function() {
+						const opts= {
+							types:[{
+								description: "Веб-страница полная",
+								accept:{
+									'text/htm': ['.html', '.htm']
+								}
+						}],
+						
+						excludeAcceptAllOption:true,
+						suggestedName: window.location.href,
+						TITLE: "Сохранение",
+						startIn: "desctop"
+						
+					};
+					alert("Сохранение возможно");
+					try {
+						window.showSaveFilePicker(opts);
+					}
+					catch (e) {
+						alert(e);
+					}
+					},
+					cancelSave: function(e) {
+						console.log(e)
+						this.key=e.key+"("+e.keyCode+")";
+						alert("Сохранение только через сочетание Ctrl+Click");
+					}
+				}
+			});
+		</SCRIPT>
+		
+	</BODY>
+</HTML>
