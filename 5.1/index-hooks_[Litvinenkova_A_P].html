@@ -1,0 +1,84 @@
+<html>
+  <title>Лаба05.1</title>
+  <script SRC="Vue.js"></script>
+</head>
+<body>
+  <div id="appVue">
+    <p v-if="message[0]">{{ message[0] }}</p>
+    <p v-if="message[1]">{{ message[1] }}</p>
+    <p v-if="message[2]">{{ message[2] }}</p>
+    <p v-if="message[3]">{{ message[3] }}</p>
+    <p v-if="message[4]">{{ message[4] }}</p>
+    <input type="button" @click="toUpdate" :value="msg" />
+    <button @click="toDestroy">Удалить</button>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          message: Array(5).fill(""),
+          msg: "Обновить",
+          flgUpdated: false,
+          flgBefore: false,
+        };
+      },
+
+      methods: {
+        toUpdate() {
+          this.flgUpdated = false;
+          this.flgBefore = false;
+          this.msg += ".";
+        },
+        toDestroy() {
+          this.message = [];
+          this.destroyed = true;
+        }
+      },
+
+      beforeMount() {
+        const now = new Date();
+        this.message[1] = "Перед монтажом: " + now + " мс: " + now.getMilliseconds();
+      },
+
+      created() {
+        const now = new Date();
+        this.message[2] = "Создан: " + now + " мс: " + now.getMilliseconds();
+      },
+
+      mounted() {
+        const now = new Date();
+        this.message[0] = "Объект скопирован: " + now + " мс: " + now.getMilliseconds();
+      },
+
+      beforeUpdate() {
+        if (!this.flgBefore) {
+          const now = new Date();
+          this.message[3] = "Перед обновлением: " + now + " мс: " + now.getMilliseconds();
+          this.flgBefore = true;
+        }
+      },
+
+      updated() {
+        if (!this.flgUpdated) {
+          const now = new Date();
+          this.message[4] = "Объект обновлен: " + now + " мс: " + now.getMilliseconds();
+          this.flgUpdated = true;
+        }
+      },
+
+      beforeUnmount() {
+        const now = new Date();
+        console.log("Перед уничтожением: " + now + " мс: " + now.getMilliseconds());
+      },
+
+      unmounted() {
+        const now = new Date();
+        console.log("Уничтожено: " + now + " мс: " + now.getMilliseconds());
+      }
+    }).mount("#appVue");
+  </script>
+</body>
+</html>
