@@ -1,0 +1,89 @@
+<HTML>
+	<!-- Заголовок страницы в браузере -->
+	<TITLE>Лаба04.3</TITLE>
+	<BODY>
+	<!-- Подключение ядра к проекту -->
+		<SCRIPT SRC="Vue.js"></SCRIPT>
+		<!-- Элементы гипертекстовой разметки -->
+		<DIV ID=appVue>
+			
+			<div>R<input :type="t" :min="mn" :max="mx" :step="stp" v-model="vlR"
+			@keydown.prevent.ctrl.r="toStop"
+			@keydown.prevent.ctrl.к="toStop"
+			@keyup.r="plusRed"
+			@keyup.к="plusRed"
+			@keyup.ctrl.r="minusRed"
+			@keyup.ctrl.к="minusRed"					
+			/>{{vlR}}</div>
+			
+			<div>G<input :type="t" :min="mn" :max="mx" :step="stp" v-model="vlG"
+			@keydown.prevent.ctrl.g="toStop"
+			@keydown.prevent.ctrl.п="toStop"
+			@keyup.g="plusGreen"
+			@keyup.п="plusGreen"
+			@keyup.left.ctrl.g="minusGreen"
+			@keyup.left.ctrl.п="minusGreen"
+			/>{{vlG}}</div>
+			
+			<div>B<input :type="t" :min="mn" :max="mx" :step="stp" v-model="vlB"
+			@keydown.prevent.ctrl.b="toStop"
+			@keydown.prevent.ctrl.и="toStop"
+			@keyup.b="plusBlue"
+			@keyup.и="plusBlue"
+			@keyup.left.ctrl.b="minusBlue"
+			@keyup.left.ctrl.и="minusBlue"			
+			/>{{vlB}}</div>
+			<DIV><p><font :style="{ color: 'rgb(' + vlR + ', ' + vlG + ', ' + vlB + ')' }">Литвиненкова ТУУ-171 ©2025</font></p></DIV>		
+			
+		</DIV>
+		
+		<SCRIPT>
+			var app = new Vue({
+				el: '#appVue',
+				data:
+				{
+					t: "range",
+					mn: 0,
+					mx: 255,
+					stp: 5,
+					vlR: 0,
+					vlG: 0,
+					vlB: 0,
+					flgAction: true,
+				},
+				
+				methods:{
+					plusRed: function() { if (this.flgAction) 
+											{ 
+												if (this.vlR<255){
+													this.vlR=Number(this.vlR)+Number(this.stp)}}},
+													
+					plusGreen: function() { if (this.flgAction) 
+											{ 
+												if (this.vlG<255){
+													this.vlG=Number(this.vlG)+Number(this.stp)}}},
+													
+					plusBlue: function() { if (this.flgAction) 
+											{ 
+												if (this.vlB<255){
+													this.vlB=Number(this.vlB)+Number(this.stp)}}},
+					
+					minusRed: function() { if(this.vlR>0){
+											this.vlR = Number(this.vlR) - Number(this.stp); 
+											this.flgAction = true; }},
+					
+					minusGreen: function() { if(this.vlG>0){
+											this.vlG = Number(this.vlG) - Number(this.stp); 
+											this.flgAction = true; }},
+					
+					minusBlue: function() { if(this.vlB>0){
+											this.vlB = Number(this.vlB) - Number(this.stp); 
+											this.flgAction = true; }},
+					
+					toStop: function() { this.flgAction = false;}},
+			})
+			
+
+		</SCRIPT>
+	</BODY>
+</HTML>

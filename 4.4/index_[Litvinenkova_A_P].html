@@ -1,0 +1,471 @@
+<HTML>
+	<!-- Заголовок страницы в браузере -->
+	<TITLE>Лаба04.4</TITLE>
+	<BODY>
+	<!-- Подключение ядра к проекту -->
+		<SCRIPT SRC="Vue.js"></SCRIPT>
+		<!-- Элементы гипертекстовой разметки -->
+		<DIV ID=appVue>
+		
+		
+		<div><table width="100%" border="1">
+		<!--дно-->
+		<!-- Верхняя строка -->
+		<template v-if="vlin_count==0">
+		<tr>
+		<!-- Верхняя левая -->
+
+		<td width="33%" :height="bhgt" valign="bottom">
+		<div v-model="alin_count" v-model="vlin_count">
+			<template  v-if="alin_count==0">
+			
+				<p align="left" >{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==1">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==2">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+	
+		
+		<!-- Верхняя центральная-->
+		<td width="33%" :height="bhgt" valign="bottom">		
+		<div v-model="alin_count">
+			<template  v-if="alin_count==3">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==4">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==5">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+		
+		<!-- Верхняя правая-->
+		<td width="33%" :height="bhgt" valign="bottom">
+		<div v-model="alin_count">
+			<template  v-if="alin_count==6">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==7">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==8">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div></td></tr>
+				
+				
+	    <!-- Нижняя строка -->		
+		<tr>
+		<!-- Нижняя левая -->
+		<td width="33%" :height="bhgt" valign="bottom">
+		<div v-model="alin_count">
+			<template  v-if="alin_count==9">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==10">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==11">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+		
+		<!-- Нижняя центральная-->
+		<td width="33%" :height="bhgt" valign="bottom">	
+		<div v-model="alin_count">
+			<template  v-if="alin_count==12">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==13">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==14">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+		
+		<!-- Нижняя правая-->
+		<td width="33%" :height="bhgt" valign="bottom">
+		<div v-model="alin_count">
+			<template  v-if="alin_count==15">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==16">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==17">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>	
+		</template>			
+		
+		
+		
+<!--центр>
+		<!--дно-->
+		<!-- Верхняя строка -->
+		<template v-else-if="vlin_count==1">
+		<tr>
+		<!-- Верхняя левая -->
+
+		<td width="33%" :height="bhgt" valign="middle">
+		<div v-model="alin_count" v-model="vlin_count">
+			<template  v-if="alin_count==0">
+			
+				<p align="left" >{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==1">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==2">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+	
+		
+		<!-- Верхняя центральная-->
+		<td width="33%" :height="bhgt" valign="middle">		
+		<div v-model="alin_count">
+			<template  v-if="alin_count==3">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==4">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==5">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+		
+		<!-- Верхняя правая-->
+		<td width="33%" :height="bhgt" valign="middle">
+		<div v-model="alin_count">
+			<template  v-if="alin_count==6">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==7">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==8">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div></td></tr>
+				
+				
+	    <!-- Нижняя строка -->		
+		<tr>
+		<!-- Нижняя левая -->
+		<td width="33%" :height="bhgt" valign="middle">
+		<div v-model="alin_count">
+			<template  v-if="alin_count==9">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==10">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==11">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+		
+		<!-- Нижняя центральная-->
+		<td width="33%" :height="bhgt" valign="middle">	
+		<div v-model="alin_count">
+			<template  v-if="alin_count==12">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==13">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==14">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+		
+		<!-- Нижняя правая-->
+		<td width="33%" :height="bhgt" valign="middle">
+		<div v-model="alin_count">
+			<template  v-if="alin_count==15">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==16">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==17">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>	
+		</template>			
+
+<!-->
+
+<!--вершина>
+		<!--дно-->
+		<!-- Верхняя строка -->
+		<template v-else-if="vlin_count==2">
+		<tr>
+		<!-- Верхняя левая -->
+
+		<td width="33%" :height="bhgt" valign="top">
+		<div v-model="alin_count" v-model="vlin_count">
+			<template  v-if="alin_count==0">
+			
+				<p align="left" >{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==1">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==2">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+	
+		
+		<!-- Верхняя центральная-->
+		<td width="33%" :height="bhgt" valign="top">		
+		<div v-model="alin_count">
+			<template  v-if="alin_count==3">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==4">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==5">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+		
+		<!-- Верхняя правая-->
+		<td width="33%" :height="bhgt" valign="top">
+		<div v-model="alin_count">
+			<template  v-if="alin_count==6">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==7">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==8">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div></td></tr>
+				
+				
+	    <!-- Нижняя строка -->		
+		<tr>
+		<!-- Нижняя левая -->
+		<td width="33%" :height="bhgt" valign="top">
+		<div v-model="alin_count">
+			<template  v-if="alin_count==9">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==10">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==11">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+		
+		<!-- Нижняя центральная-->
+		<td width="33%" :height="bhgt" valign="top">	
+		<div v-model="alin_count">
+			<template  v-if="alin_count==12">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==13">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==14">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>				
+		</div>
+		</td>
+		
+		<!-- Нижняя правая-->
+		<td width="33%" :height="bhgt" valign="top">
+		<div v-model="alin_count">
+			<template  v-if="alin_count==15">
+			
+				<p align="left">{{message}}</p>
+			
+			</template>
+		
+			<template v-else-if="alin_count==16">
+				<p align="center">{{message}}</p>
+			</template>
+	
+			<template v-else-if="alin_count==17">
+				<p align="right">{{message}}</p>
+			</template>
+			
+			<template v-else>
+			</template>	
+		</template>			
+		</div></td></tr>	
+		</table></div>
+		
+
+		
+		<div><input v-model="message"
+		@keyup.right="goRight"
+		@keyup.left="goLeft"
+		@keyup.up="goUp"
+		@keyup.down="goDown"
+		/></div>
+			<DIV> Литвиненкова ТУУ-171 ©2025 {{vlin_count}}</DIV>		
+		</DIV>
+		
+		<SCRIPT>
+			var app = new Vue({
+				el: '#appVue',
+				data:
+				{
+					message: "",
+					bhgt: 50,
+					alin_count: 4,
+					vlin_count: 2,
+					vlin: "Top"
+				},
+				
+				methods: {
+					goRight: function() {{if(this.alin_count<17){this.alin_count++}}},
+					goLeft: function() {{if(this.alin_count>0){this.alin_count--}}},	
+					goUp: function() {{if(this.vlin_count<2){this.vlin_count++}}},
+					goDown: function() {{if(this.vlin_count>0){this.vlin_count--}}},
+					
+				}
+			});
+		</SCRIPT>
+		
+	</BODY>
+</HTML>
