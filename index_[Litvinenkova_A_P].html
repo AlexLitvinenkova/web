@@ -2,7 +2,7 @@
 	<!-- Заголовок страницы в браузере -->
 	<TITLE>Лаба01</TITLE>
 	<head>
-		<link href="./styleRef/style.css" rel="stylesheet"></link>
+		<link href="/styleRef/style.css" rel="stylesheet"></link>
 	</head>
 	<BODY>
 		<!-- Элементы гипертекстовой разметки -->
@@ -63,17 +63,5 @@
 			
 				<DIV> ©2025 </DIV>		
 		</DIV>
-
-		<button ID = myButton onclick = "myFunc()">Клонировать сайт</button> <!-- добавляем атрибут событий onclick -->		
-
-		<SCRIPT>
-			const firstDiv = document.querySelector( "div" ); // выбираем первый элемент <div> в документе 
-			function myFunc() {
-				const newDiv = firstDiv.cloneNode( true ); // клонируем элемент с его потомками
-				document.body.appendChild( newDiv ); // добавляем клонированный элемент элементу <body>
-				var button = document.getElementById('myButton');
-				button.disabled = true;
-			}
-		</SCRIPT>
 	</BODY>
 </HTML>
